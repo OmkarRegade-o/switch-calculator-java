@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Switch Calculator</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <input type="number" id="a">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="b">
+    <button onclick="calculate()">=</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let op = document.getElementById("op").value;
+            let result;
+
+            switch(op) {
+                case "+":
+                    result = a + b;
+                    break;
+                case "-":
+                    result = a - b;
+                    break;
+                case "*":
+                    result = a * b;
+                    break;
+                case "/":
+                    result = b !== 0 ? a / b : "Error";
+                    break;
+                default:
+                    result = "Invalid";
+            }
+
+            document.getElementById("result").innerText = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
