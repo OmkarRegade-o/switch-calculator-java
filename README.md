@@ -7,7 +7,7 @@ This project performs basic arithmetic operations using the **JavaScript Switch 
 
 ## 📸 Screenshot
 
-![Calculator UI](images/calculator.png)
+[![Calculator UI](images/calculator.png)](https://github.com/omkarregade-96/switch-calculator-java/blob/f8c8b29fb17a2fb1244f257b5fbd67b7faece4c7/Screenshot%202026-08-07%20213310.png)
 
 ---
 
