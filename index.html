@@ -2,47 +2,215 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Switch Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Switch Calculator</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+}
+
+.calculator{
+
+    width:380px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+h2{
+
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+
+}
+
+input,select{
+
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    outline:none;
+
+}
+
+.buttons{
+
+display:flex;
+gap:10px;
+
+}
+
+button{
+
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.calculate{
+
+background:#00d084;
+color:white;
+
+}
+
+.calculate:hover{
+
+background:#00b16a;
+transform:scale(1.05);
+
+}
+
+.reset{
+
+background:#ff4d4d;
+color:white;
+
+}
+
+.reset:hover{
+
+background:#e60000;
+transform:scale(1.05);
+
+}
+
+#result{
+
+margin-top:20px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+color:#fff;
+padding:15px;
+border-radius:10px;
+background:rgba(255,255,255,.15);
+
+}
+
+</style>
+
 </head>
 <body>
-    <h2>Calculator</h2>
-    <input type="number" id="a">
-    <select id="op">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-    </select>
-    <input type="number" id="b">
-    <button onclick="calculate()">=</button>
-    <p id="result"></p>
 
-    <script>
-        function calculate() {
-            let a = parseFloat(document.getElementById("a").value);
-            let b = parseFloat(document.getElementById("b").value);
-            let op = document.getElementById("op").value;
-            let result;
+<div class="calculator">
 
-            switch(op) {
-                case "+":
-                    result = a + b;
-                    break;
-                case "-":
-                    result = a - b;
-                    break;
-                case "*":
-                    result = a * b;
-                    break;
-                case "/":
-                    result = b !== 0 ? a / b : "Error";
-                    break;
-                default:
-                    result = "Invalid";
-            }
+<h2>🧮 Switch Calculator</h2>
 
-            document.getElementById("result").innerText = "Result: " + result;
-        }
-    </script>
+<input type="number" id="a" placeholder="Enter First Number">
+
+<select id="op">
+
+<option value="+">Addition (+)</option>
+<option value="-">Subtraction (-)</option>
+<option value="*">Multiplication (*)</option>
+<option value="/">Division (/)</option>
+
+</select>
+
+<input type="number" id="b" placeholder="Enter Second Number">
+
+<div class="buttons">
+
+<button class="calculate" onclick="calculate()">Calculate</button>
+
+<button class="reset" onclick="resetCalc()">Reset</button>
+
+</div>
+
+<div id="result">Result : 0</div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let a=parseFloat(document.getElementById("a").value);
+let b=parseFloat(document.getElementById("b").value);
+let op=document.getElementById("op").value;
+let result;
+
+if(isNaN(a)||isNaN(b))
+{
+document.getElementById("result").innerHTML="❌ Enter Both Numbers";
+return;
+}
+
+switch(op){
+
+case "+":
+result=a+b;
+break;
+
+case "-":
+result=a-b;
+break;
+
+case "*":
+result=a*b;
+break;
+
+case "/":
+
+if(b==0)
+result="Cannot Divide by Zero";
+else
+result=a/b;
+
+break;
+
+default:
+result="Invalid Operator";
+
+}
+
+document.getElementById("result").innerHTML="✅ Result : "+result;
+
+}
+
+function resetCalc(){
+
+document.getElementById("a").value="";
+document.getElementById("b").value="";
+document.getElementById("op").selectedIndex=0;
+document.getElementById("result").innerHTML="Result : 0";
+
+}
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Enter")
+calculate();
+
+});
+
+</script>
+
 </body>
 </html>
