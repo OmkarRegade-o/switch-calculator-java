@@ -1,42 +1,32 @@
-# 🧮 Switch Calculator
+<div align="center">
+🧮 Switch Calculator
 
-A modern and responsive calculator built using **HTML, CSS, and JavaScript**.  
-This project performs basic arithmetic operations using the **JavaScript Switch Statement**.
+A modern, responsive calculator built with HTML, CSS & JavaScript, powered by the Switch Statement for arithmetic logic.
 
----
+Show Image Show Image Show Image
 
-## 📸 Screenshot
+</div>
+📸 Preview
+<div align="center">
 
-[![Calculator UI](images/calculator.png)](https://github.com/omkarregade-96/switch-calculator-java/blob/f8c8b29fb17a2fb1244f257b5fbd67b7faece4c7/Screenshot%202026-08-07%20213310.png)
+Show Image
 
----
-
-## 🚀 Features
-
-- ➕ Addition
-- ➖ Subtraction
-- ✖ Multiplication
-- ➗ Division
-- ❌ Divide by Zero Handling
-- 🔄 Reset Button
-- ⌨️ Press Enter to Calculate
-- 📱 Responsive Design
-- 🎨 Modern Glassmorphism UI
-- ⚡ Fast and Lightweight
-
----
-
-## 🛠 Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (Switch Case)
-
----
-
-## 📂 Project Structure
-
-```text
+</div>
+🚀 Features
+Feature	Description
+➕ ➖ ✖ ➗	Addition, Subtraction, Multiplication, Division
+❌	Divide by zero handling
+🔄	Reset button
+⌨️	Press Enter to calculate
+📱	Fully responsive design
+🎨	Modern glassmorphism UI
+⚡	Fast and lightweight, no dependencies
+🛠 Tech Stack
+HTML5 — structure
+CSS3 — styling & glassmorphism effects
+JavaScript — logic via switch statement
+📂 Project Structure
+text
 Switch-Calculator/
 │
 ├── index.html
@@ -45,67 +35,33 @@ Switch-Calculator/
 ├── README.md
 └── images/
     └── calculator.png
-```
+▶️ Getting Started
 
----
+1. Clone the repository
 
-## ▶️ How to Run
+bash
+git clone https://github.com/omkarregade-96-cyber/switch-calculator-java.git
 
-1. Download or Clone this repository
+2. Open the project folder
 
-```bash
-git clone https://github.com/yourusername/Switch-Calculator.git
-```
+bash
+cd switch-calculator-java
 
-2. Open the project folder.
+3. Run it
 
-3. Double-click **index.html**
+Double-click index.html, or
+Open with Live Server in VS Code
+🎯 Concepts Practiced
+DOM Manipulation
+Event Handling
+Switch Statements
+Input Validation
+Conditional Logic
+Responsive CSS Layouts
+👨‍💻 Author
 
-OR
+Omkar Regade Show Image
 
-Open with **Live Server** in VS Code.
-
----
-
-## 💻 Preview
-
-- Clean UI
-- Easy to Use
-- Beginner Friendly
-- Responsive Layout
-
----
-
-## 🎯 Learning Concepts
-
-- Variables
-- Functions
-- DOM Manipulation
-- Event Handling
-- Switch Statement
-- Input Validation
-- Conditional Statements
-
----
-
-## 📷 Screenshot
-
-![Calculator Screenshot](images/calculator.png)
-
----
-
-## 👨‍💻 Author
-
-**Omkar Regade**
-
-GitHub: https://github.com/yourusername
-
----
-
-## ⭐ Support
-
-If you like this project,
-
-⭐ Star this repository
-
-and feel free to Fork it.
+<div align="center">
+⭐ If you found this useful, consider starring the repo!
+</div>
