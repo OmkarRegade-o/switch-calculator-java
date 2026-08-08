@@ -1,216 +1,176 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Switch Calculator</title>
 
-<style>
+    <!-- Basic Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+    <!-- Page Title -->
+    <title>Modern Switch Calculator</title>
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#1d2671,#c33764);
-}
-
-.calculator{
-
-    width:380px;
-    padding:30px;
-    border-radius:20px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-
-}
-
-h2{
-
-    text-align:center;
-    color:white;
-    margin-bottom:25px;
-
-}
-
-input,select{
-
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    outline:none;
-
-}
-
-.buttons{
-
-display:flex;
-gap:10px;
-
-}
-
-button{
-
-    flex:1;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-
-}
-
-.calculate{
-
-background:#00d084;
-color:white;
-
-}
-
-.calculate:hover{
-
-background:#00b16a;
-transform:scale(1.05);
-
-}
-
-.reset{
-
-background:#ff4d4d;
-color:white;
-
-}
-
-.reset:hover{
-
-background:#e60000;
-transform:scale(1.05);
-
-}
-
-#result{
-
-margin-top:20px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-color:#fff;
-padding:15px;
-border-radius:10px;
-background:rgba(255,255,255,.15);
-
-}
-
-</style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
+
+
 <body>
 
-<div class="calculator">
+    <!-- =========================
+         MAIN APPLICATION
+    ========================== -->
 
-<h2>🧮 Switch Calculator</h2>
+    <main class="calculator">
 
-<input type="number" id="a" placeholder="Enter First Number">
+        <!-- Calculator Header -->
+        <header class="calculator-header">
 
-<select id="op">
+            <h1 class="calculator-title">
+                🧮 Switch Calculator
+            </h1>
 
-<option value="+">Addition (+)</option>
-<option value="-">Subtraction (-)</option>
-<option value="*">Multiplication (*)</option>
-<option value="/">Division (/)</option>
+            <p class="calculator-subtitle">
+                Simple arithmetic using JavaScript switch-case
+            </p>
 
-</select>
+        </header>
 
-<input type="number" id="b" placeholder="Enter Second Number">
 
-<div class="buttons">
+        <!-- Calculator Content -->
+        <section class="calculator-content">
 
-<button class="calculate" onclick="calculate()">Calculate</button>
+            <!-- First Number -->
+            <div class="input-group">
 
-<button class="reset" onclick="resetCalc()">Reset</button>
+                <label for="firstNumber">
+                    First Number
+                </label>
 
-</div>
+                <input
+                    type="number"
+                    id="firstNumber"
+                    name="firstNumber"
+                    placeholder="Enter first number"
+                    autocomplete="off"
+                >
 
-<div id="result">Result : 0</div>
+            </div>
 
-</div>
 
-<script>
+            <!-- Operator -->
+            <div class="input-group">
 
-function calculate(){
+                <label for="operator">
+                    Select Operation
+                </label>
 
-let a=parseFloat(document.getElementById("a").value);
-let b=parseFloat(document.getElementById("b").value);
-let op=document.getElementById("op").value;
-let result;
+                <select
+                    id="operator"
+                    name="operator"
+                >
 
-if(isNaN(a)||isNaN(b))
-{
-document.getElementById("result").innerHTML="❌ Enter Both Numbers";
-return;
-}
+                    <option value="+">
+                        Addition (+)
+                    </option>
 
-switch(op){
+                    <option value="-">
+                        Subtraction (-)
+                    </option>
 
-case "+":
-result=a+b;
-break;
+                    <option value="*">
+                        Multiplication (×)
+                    </option>
 
-case "-":
-result=a-b;
-break;
+                    <option value="/">
+                        Division (÷)
+                    </option>
 
-case "*":
-result=a*b;
-break;
+                </select>
 
-case "/":
+            </div>
 
-if(b==0)
-result="Cannot Divide by Zero";
-else
-result=a/b;
 
-break;
+            <!-- Second Number -->
+            <div class="input-group">
 
-default:
-result="Invalid Operator";
+                <label for="secondNumber">
+                    Second Number
+                </label>
 
-}
+                <input
+                    type="number"
+                    id="secondNumber"
+                    name="secondNumber"
+                    placeholder="Enter second number"
+                    autocomplete="off"
+                >
 
-document.getElementById("result").innerHTML="✅ Result : "+result;
+            </div>
 
-}
 
-function resetCalc(){
+            <!-- Calculator Actions -->
+            <div class="calculator-actions">
 
-document.getElementById("a").value="";
-document.getElementById("b").value="";
-document.getElementById("op").selectedIndex=0;
-document.getElementById("result").innerHTML="Result : 0";
+                <button
+                    type="button"
+                    class="btn btn-calculate"
+                    id="calculateButton"
+                >
+                    Calculate
+                </button>
 
-}
+                <button
+                    type="button"
+                    class="btn btn-reset"
+                    id="resetButton"
+                >
+                    Reset
+                </button>
 
-document.addEventListener("keydown",function(e){
+            </div>
 
-if(e.key==="Enter")
-calculate();
 
-});
+            <!-- Result -->
+            <section
+                class="result-container"
+                aria-live="polite"
+            >
 
-</script>
+                <h2 class="result-title">
+                    Result
+                </h2>
+
+                <p
+                    class="result-value"
+                    id="result"
+                >
+                    0
+                </p>
+
+            </section>
+
+        </section>
+
+
+        <!-- Calculator Footer -->
+        <footer class="calculator-footer">
+
+            <p>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
+```
